@@ -5,7 +5,8 @@ import time
 from var import keys
 from var import contract_keys
 # works
-web3 = Web3(Web3.HTTPProvider(keys["infura_url"]))
+#web3 = Web3(Web3.HTTPProvider(keys["infura_url"]))
+web3 = Web3(Web3.HTTPProvider("https://rpc.xdaichain.com"))
 
 # uniswap contract 
 uniswap_contract_abi = json.loads(contract_keys["uniswap_abi"])
@@ -39,7 +40,7 @@ def buy_amis(eth_out: int, slippage: float, receiver: str):
     print(web3.toHex(tx_hash))
     tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
     print("buy successful")
-    print("one amis is worth this much eth: " + str(get_price_amis_to_eth()))
+    print("b one amis is worth this much eth: " + str(get_price_amis_to_eth()))
     
 # amis_out: the amount of amis you want to exchange for eth
 # slippage: percentage tolerance for tokens in/out
@@ -61,7 +62,7 @@ def sell_amis(amis_out: int, slippage: float, receiver: str):
     print(web3.toHex(tx_hash))
     tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
     print("sell successful")
-    print("one amis is worth this much eth: " + str(get_price_amis_to_eth()))
+    print("s one amis is worth this much eth: " + str(get_price_amis_to_eth()))
 
 def get_price_amis_to_eth():
     univ2_amis_balance = amis_contract.functions.balanceOf(contract_keys["amis_weth_univ2_contract"]).call()
@@ -87,5 +88,5 @@ def run(lower_bound, upper_bound, holding=""):
             sell_amis(amis_contract.functions.balanceOf(keys["my_account"]).call(), keys["slippage"], keys["receiver_account"])
             asset = "eth"
 
-print("one amis is worth this much eth: " + str(get_price_amis_to_eth()))
+print("r one amis is worth this much eth: " + str(get_price_amis_to_eth()))
 run(0.035, 0.041)
