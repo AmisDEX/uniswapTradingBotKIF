@@ -1,6 +1,6 @@
 # uniswapTradingBotKIF
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AmisDEX/uniswapTradingBotKIF/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AmisDEX/uniswapTradingBotKIF/main)
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AmisDEX/uniswapTradingBotKIF/blob/master/UniswapTradinBot.ipynb)
 [![nbviewer](https://img.shields.io/badge/view%20on-nbviewer-brightgreen.svg)](https://nbviewer.jupyter.org/github/AmisDEX/uniswapTradingBotKIF/blob/master/UniswapTradinBot.ipynb)
 
